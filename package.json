@@ -1,0 +1,36 @@
+{
+  "name": "gulp-css-unit",
+  "version": "1.0.0",
+  "description": "css unit converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsaowe/gulp-css-unit.git"
+  },
+  "keywords": [
+    "gulp",
+    "css",
+    "unit",
+    "convert",
+    "to",
+    "px",
+    "rem",
+    "vw",
+    "etc."
+  ],
+  "author": "tsaowe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsaowe/gulp-css-unit/issues"
+  },
+  "homepage": "https://github.com/tsaowe/gulp-css-unit#readme",
+  "devDependencies": {
+    "fs": "0.0.2",
+    "gulp-util": "^3.0.7",
+    "lodash": "^4.13.1",
+    "through2": "^2.0.1"
+  }
+}
