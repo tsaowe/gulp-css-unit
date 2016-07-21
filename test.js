@@ -8,7 +8,7 @@ var _ = require('lodash');
 
 var csscontent = '';
 
-fs.readFile("/Users/tsaowe/projects/static_cart/static_cart/src/css/confirmation/order.scss",'utf-8',function(err,data){
+fs.readFile("/Users/tsaowe/Desktop/a.css",'utf-8',function(err,data){
     if(err){
         console.log("error");
     }else{
@@ -24,7 +24,7 @@ fs.readFile("/Users/tsaowe/projects/static_cart/static_cart/src/css/confirmation
         var onevw = screenWidth / 100;
 
 
-        var digital = '[0-9]+(\.[0-9]+)?';
+        var digital = '[0-9]+(\\.[0-9]+)?';
 
         var content = csscontent;
         var matched = content.match(new RegExp(digital + from,'ig'));
