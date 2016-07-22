@@ -1,7 +1,7 @@
 var gutil = require('gulp-util');
 var through = require('through2');
 var package = require('./package.json');
-var _ = require('lodash');
+var floor = require('lodash.floor');
 
 module.exports = function (options) {
     return through.obj(function (file, enc, cb) {
@@ -51,7 +51,7 @@ module.exports = function (options) {
 
         var sets2 = sets1.map(function (val, idx) {
             val = val.replace(from,'') * 1;
-            var newvw =_.floor(val / onevw, 5);
+            var newvw =floor(val / onevw, 5);
             return newvw + to;
         });
 
