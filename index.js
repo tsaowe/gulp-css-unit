@@ -38,7 +38,7 @@ module.exports = function (options) {
 
         
         var content = file.contents.toString();
-        var digital = '[0-9]+(\.[0-9]+)?';
+        var digital = '[0-9]+(\\.[0-9]+)?';
 
         var matched = content.match(new RegExp(digital + from,'ig'));
 
