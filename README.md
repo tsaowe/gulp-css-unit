@@ -15,9 +15,9 @@ gulp.task('pxtovw',function(){
    
     gulp.src('src/css/*/*.css')
         .pipe(cssunit({
-            from:   'px',
-            to  :   'vw',
-            width:  750
+            from     :   'px',
+            to       :   'vw',
+            width    :  750
         }))
         .pipe(gulp.dest('dist/'));
     
