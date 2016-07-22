@@ -15,9 +15,9 @@ gulp.task('pxtovw',function(){
    
     gulp.src('src/css/*/*.css')
         .pipe(cssunit({
-            from     :   'px',
-            to       :   'vw',
-            width    :  750
+            from     :    'px',
+            to       :    'vw',
+            width    :    750
         }))
         .pipe(gulp.dest('dist/'));
     
@@ -30,9 +30,9 @@ gulp.task('pxtovw',function(){
 
 options:
 ```
-from     : convert X to Y unit,from is hereby X
-to       : Y
-width    : designer's screen width,like 640,750, etc.
+from     :    convert X to Y unit,from is hereby X
+to       :    Y
+width    :    designer's screen width,like 640,750, etc.
 ```
 
 
@@ -48,9 +48,9 @@ designer give you a 750px sketch,but you want to adapt your mobile pages to all 
 2 pipe your css process with this plugin
 
     .pipe(cssunit({
-                from     :   'px',
-                to       :   'vw',
-                width    :  750
+                from     :    'px',
+                to       :    'vw',
+                width    :    750
             }))
             
 3 get a responsive page css,yeah!
