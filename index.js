@@ -43,6 +43,11 @@ module.exports = function (options) {
         var matched = content.match(new RegExp(digital + from,'ig'));
 
         var sets1 = Array.from(new Set(matched));
+        sets1 = sets1.sort(function (a,b){
+            a = a.replace(from,'')*1;
+            b = b.replace(from,'')*1;
+            return b - a;
+        });
 
         var sets2 = sets1.map(function (val, idx) {
             val = val.replace(from,'') * 1;

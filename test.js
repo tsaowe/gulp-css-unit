@@ -8,7 +8,7 @@ var _ = require('lodash');
 
 var csscontent = '';
 
-fs.readFile("/Users/tsaowe/Desktop/a.css",'utf-8',function(err,data){
+fs.readFile("/Users/tsaowe/Desktop/first-grade.css",'utf-8',function(err,data){
     if(err){
         console.log("error");
     }else{
@@ -20,7 +20,7 @@ fs.readFile("/Users/tsaowe/Desktop/a.css",'utf-8',function(err,data){
          */
         var from = 'px';    // px
         var to = 'vw';        // vw
-        var screenWidth = 750;
+        var screenWidth = 640;
         var onevw = screenWidth / 100;
 
 
@@ -30,6 +30,11 @@ fs.readFile("/Users/tsaowe/Desktop/a.css",'utf-8',function(err,data){
         var matched = content.match(new RegExp(digital + from,'ig'));
 
         var sets1 = Array.from(new Set(matched));
+        sets1 = sets1.sort(function (a,b){
+            a = a.replace(from,'')*1;
+            b = b.replace(from,'')*1;
+            return b - a;
+        });
 
         var sets2 = sets1.map(function (val, idx) {
             val = val.replace(from,'') * 1;
