@@ -66,7 +66,7 @@ designer give you a 750px sketch,but you want to adapt your mobile pages to all 
 2.1 pipe your css process with this plugin
 
     .pipe(cssunit({
-                type     :    'px-to-vw'
+                type     :    'px-to-vw',
                 from     :    'px',
                 to       :    'vw',
                 width    :    750
