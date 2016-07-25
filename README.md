@@ -15,7 +15,7 @@ gulp.task('pxtovw',function(){
    
     gulp.src('src/css/*/*.css')
         .pipe(cssunit({
-            type     :    'px-to-vw'
+            type     :    'px-to-vw',
             from     :    'px',
             to       :    'vw',
             width    :    750
@@ -29,10 +29,9 @@ gulp.task('pxtorem',function(){
    
     gulp.src('src/css/*/*.css')
         .pipe(cssunit({
-            type     :    'px-to-rem'
+            type     :    'px-to-rem',
             from     :    'px',
             to       :    'rem',
-            width    :    640,
             rootSize :    16
         }))
         .pipe(gulp.dest('dist/'));
