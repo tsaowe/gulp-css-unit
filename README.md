@@ -80,7 +80,6 @@ or 2.2
                     type     :    'px-to-rem'
                     from     :    'px',
                     to       :    'rem',
-                    width    :    640,
                     rootSize :    16          //this is your html tag's font size
                 }))
                 
