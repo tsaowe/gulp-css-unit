@@ -48,16 +48,32 @@ module.exports = function (options) {
             b = b.replace(from,'')*1;
             return b - a;
         });
+        var sets2 = undefined;
+        if(options.type === 'px-to-vw'){
+            sets2 = sets1.map(function (val, idx) {
+                val = val.replace(from,'') * 1;
+                var newvw =floor(val / onevw, 5);
+                return newvw + to;
+            });
 
-        var sets2 = sets1.map(function (val, idx) {
-            val = val.replace(from,'') * 1;
-            var newvw =floor(val / onevw, 5);
-            return newvw + to;
-        });
+            for(var i =0;i<sets1.length;i++){
+                content = content.replace(new RegExp(sets1[i],'ig'),sets2[i]);
+            }
+        } else if (options.type === 'px-to-rem') {
+            var rootSize = options.rootSize || 16;
 
-        for(var i =0;i<sets1.length;i++){
-            content = content.replace(new RegExp(sets1[i],'ig'),sets2[i]);
+            sets2 = sets1.map(function (val, idx) {
+                val = val.replace(from, '') * 1;
+                var newRem = floor(val / rootSize, 5);
+                return newRem + to;
+            });
+
+            for (i = 0; i < sets1.length; i++) {
+                content = content.replace(new RegExp(sets1[i], 'ig'), sets2[i]);
+            }
         }
+
+
 
         file.contents = new Buffer(content);
 

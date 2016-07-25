@@ -30,9 +30,12 @@ gulp.task('pxtovw',function(){
 
 options:
 ```
+type     :    enum('px-to-vw','px-to-rem')
 from     :    convert X to Y unit,from is hereby X
 to       :    Y
 width    :    designer's screen width,like 640,750, etc.
+rootSize :    <html> tag's font size
+
 ```
 
 
@@ -45,13 +48,28 @@ designer give you a 750px sketch,but you want to adapt your mobile pages to all 
 #### then you should do 
 ```
 1 design your page according to 750px with all unit set to px   (750px is an example)
-2 pipe your css process with this plugin
+2.1 pipe your css process with this plugin
 
     .pipe(cssunit({
+                type     :    'px-to-vw'
                 from     :    'px',
                 to       :    'vw',
                 width    :    750
             }))
+            
+            
+
+*************************************************
+or 2.2 
+    .pipe(cssunit({
+                    type     :    'px-to-rem'
+                    from     :    'px',
+                    to       :    'rem',
+                    width    :    640,
+                    rootSize :    16          //this is your html tag's font size
+                }))
+                
+*************************************************
             
 3 get a responsive page css,yeah!
 
