@@ -77,7 +77,7 @@ designer give you a 750px sketch,but you want to adapt your mobile pages to all 
 *************************************************
 or 2.2 
     .pipe(cssunit({
-                    type     :    'px-to-rem'
+                    type     :    'px-to-rem',
                     from     :    'px',
                     to       :    'rem',
                     rootSize :    16          //this is your html tag's font size
