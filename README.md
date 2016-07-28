@@ -67,8 +67,8 @@ designer give you a 750px sketch,but you want to adapt your mobile pages to all 
 
     .pipe(cssunit({
                 type     :    'px-to-vw',
-                from     :    'px',
-                to       :    'vw',
+              //from     :    'px',//optional set to px
+              //to       :    'vw',//optional set to vw
                 width    :    750
             }))
             
@@ -78,8 +78,8 @@ designer give you a 750px sketch,but you want to adapt your mobile pages to all 
 or 2.2 
     .pipe(cssunit({
                     type     :    'px-to-rem',
-                    from     :    'px',
-                    to       :    'rem',
+                  //from     :    'px',//optional
+                  //to       :    'rem',//optional
                     rootSize :    16          //this is your html tag's font size
                 }))
                 

@@ -50,6 +50,8 @@ module.exports = function (options) {
         });
         var sets2 = undefined;
         if(options.type === 'px-to-vw'){
+            from = 'px';
+            to = 'vw';
             sets2 = sets1.map(function (val, idx) {
                 val = val.replace(from,'') * 1;
                 var newvw =floor(val / onevw, 5);
@@ -61,6 +63,8 @@ module.exports = function (options) {
             }
         } else if (options.type === 'px-to-rem') {
             var rootSize = options.rootSize || 16;
+            from = 'px';
+            to = 'rem';
 
             sets2 = sets1.map(function (val, idx) {
                 val = val.replace(from, '') * 1;
