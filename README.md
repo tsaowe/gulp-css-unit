@@ -16,8 +16,6 @@ gulp.task('pxtovw',function(){
     gulp.src('src/css/*/*.css')
         .pipe(cssunit({
             type     :    'px-to-vw',
-            from     :    'px',
-            to       :    'vw',
             width    :    750
         }))
         .pipe(gulp.dest('dist/'));
@@ -30,8 +28,6 @@ gulp.task('pxtorem',function(){
     gulp.src('src/css/*/*.css')
         .pipe(cssunit({
             type     :    'px-to-rem',
-            from     :    'px',
-            to       :    'rem',
             rootSize :    16
         }))
         .pipe(gulp.dest('dist/'));
@@ -92,7 +88,7 @@ or 2.2
 
 ### CONTACT ME
 
-**please fell free to add any your unit issues to my [GITHUB ISSUES](https://github.com/tsaowe/gulp-css-unit/issues)**
+**please feel free to add any your unit issues to my [GITHUB ISSUES](https://github.com/tsaowe/gulp-css-unit/issues)**
 **I will check it!**
 
 ## License
