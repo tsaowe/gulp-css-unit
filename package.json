@@ -33,6 +33,7 @@
     "lodash.floor": "^4.0.2"
   },
   "dependencies": {
+    "gulp-util": "^3.0.7",
     "lodash.floor": "^4.0.2"
   }
 }
