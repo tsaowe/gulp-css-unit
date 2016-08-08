@@ -1,6 +1,6 @@
 {
   "name": "gulp-css-unit",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "css unit converter",
   "main": "index.js",
   "scripts": {
