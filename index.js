@@ -74,6 +74,28 @@ module.exports = function (options) {
             for (i = 0; i < sets1.length; i++) {
                 content = content.replace(new RegExp(sets1[i], 'ig'), sets2[i]);
             }
+        } else if(options.type === 'px-to-px'){
+            from = options.from;
+            to = options.to;
+
+            matched = content.match(new RegExp(digital + 'px', 'ig'));
+            sets1 = Array.from(new Set(matched));
+            sets1 = sets1.sort(function (a, b) {
+                a = a.replace('px', '') * 1;
+                b = b.replace('px', '') * 1;
+                return b - a;
+            });
+
+            sets2 = sets1.map(function (val, idx) {
+                val = val.replace('px', '') * 1;
+                var newPx = floor(val * to / from, 5);
+                return newPx + 'px';
+            });
+
+            for (i = 0; i < sets1.length; i++) {
+                content = content.replace(new RegExp(sets1[i], 'ig'), sets2[i]);
+            }
+
         }
 
 
