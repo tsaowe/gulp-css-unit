@@ -89,12 +89,14 @@ module.exports = function (options) {
             sets2 = sets1.map(function (val, idx) {
                 val = val.replace('px', '') * 1;
                 var newPx = floor(val * to / from, 5);
-                return newPx + 'px';
+                return newPx + 'xpx';
             });
 
             for (i = 0; i < sets1.length; i++) {
                 content = content.replace(new RegExp(sets1[i], 'ig'), sets2[i]);
             }
+            
+            content = content.replace(/xpx/ig,'px');
 
         }
 
