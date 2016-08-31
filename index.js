@@ -65,6 +65,17 @@ module.exports = function (options) {
             from = 'px';
             to = 'rem';
 
+            if (options.ignore) {
+                for (i = sets1.length - 1; i >= 0; i--) {
+                    var pop = sets1.pop();
+                    pop = pop.replace('px', '') * 1;
+                    if (pop > options.ignore) {
+                        sets1.push(pop+'px');
+                        break;
+                    }
+                }
+            }
+
             sets2 = sets1.map(function (val, idx) {
                 val = val.replace(from, '') * 1;
                 var newRem = floor(val / rootSize, 5);
